@@ -10,7 +10,6 @@ special_characters = list('#!"§$%&/()[]{}=-_+*<>;:.')
 password_characters = small_letters + big_letters + numbers + special_characters
 salt = "pepper"
 
-
 def convert_bytes_to_password(hashed_bytes, length):
     number = int.from_bytes(hashed_bytes, byteorder='big')
     password = ''
@@ -22,8 +21,8 @@ def convert_bytes_to_password(hashed_bytes, length):
 master_password = input('Masterwachtwoord: ')
 domain = input('Domein: ')
 while len(domain) < 1:
-    print('Bitte gib eine Domain an, für die das Passwort generiert werden soll.')
-    domain = input('Domain: ')
+    print('Geef een domein op waarvoor een wachtwoord gegenereerd moet worden.')
+    domain = input('Domein: ')
 hash_string = domain + master_password
 hashed_bytes = pbkdf2_hmac('sha512', hash_string.encode('utf-8'), salt.encode('utf-8'), 4096)
-print('Passwort: ' + convert_bytes_to_password(hashed_bytes, 10))
+print('Wachtwoord: ' + convert_bytes_to_password(hashed_bytes, 10))
