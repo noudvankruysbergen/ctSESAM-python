@@ -19,8 +19,8 @@ def convert_bytes_to_password(hashed_bytes, length):
         number = number // len(password_characters)
     return password
 
-master_password = input('Masterpassswort: ')
-domain = input('Domain: ')
+master_password = input('Masterwachtwoord: ')
+domain = input('Domein: ')
 while len(domain) < 1:
     print('Bitte gib eine Domain an, für die das Passwort generiert werden soll.')
     domain = input('Domain: ')
