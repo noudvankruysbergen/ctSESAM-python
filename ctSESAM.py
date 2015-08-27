@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
 from hashlib import pbkdf2_hmac
 
-small_letters = list('abcdefghijklmnopqrstuvwxyz')
-big_letters = list('ABCDEFGHJKLMNPQRTUVWXYZ')
+lower_case_letters = list('abcdefghijklmnopqrstuvwxyz')
+upper_case_letters = list('ABCDEFGHJKLMNPQRTUVWXYZ')
 numbers = list('0123456789')
-special_characters = list('#!"§$%&/()[]{}=-_+*<>;:.')
-password_characters = small_letters + big_letters + numbers + special_characters
+special_characters = list('#!"§$%&/()[]{}=-_+*<;:.')
+password_characters = lower_case_letters + upper_case_letters + numbers + special_characters
 salt = "pepper"
 
 def convert_bytes_to_password(hashed_bytes, length):
